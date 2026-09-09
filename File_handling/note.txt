@@ -1,0 +1,25 @@
+File handling refers to the process of performing operations on a file,
+such as creating, opening, reading, writing and closing it through a
+programming interface. It involves managing the data flow between the
+program and the file system on the storage device, ensuring that data
+is handled safely and efficiently.
+
+
+
+Need for File Handling
+
+    Store data permanently, even after the program ends.
+    Access external files like .txt, .csv, .json, etc.
+    Process large files efficiently without using much memory.
+    Automate tasks like reading configs or saving outputs.
+
+
+ There are four different methods (modes) for opening a file:
+
+"r" - Read - Default value. Opens a file for reading, error if the file does not exist
+
+"a" - Append - Opens a file for appending, creates the file if it does not exist
+
+"w" - Write - Opens a file for writing, creates the file if it does not exist
+
+"x" - Create - Creates the specified file, returns an error if the file exists

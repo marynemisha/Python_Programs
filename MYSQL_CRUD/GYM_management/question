@@ -1,0 +1,20 @@
+database: gym_db
+table   :member
+            ---> id int primary key,auto increment,
+            --->name varchar(100),
+            --->place varchar(100),
+            --->mobile varchar(15),
+            --->plan varchar(100),
+            --->fee int,
+            --->joined_on date
+requirements: create a class named GymMemberManager
+
+1. connect to database
+     - establish a connection to the MySQL database
+2. add record
+     -accept all field values
+     -insert the record
+     -display:record added successfully
+3. view all records
+4. update records
+5. delete records
