@@ -9,3 +9,4 @@ create table member(id int auto_increment primary key,
             joined_on date);
 show tables;
 select * from member;
+desc member;

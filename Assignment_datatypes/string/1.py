@@ -7,8 +7,6 @@ consonants=0
 digits=0
 spaces=0
 special=0
-l=0
-u=0
 for i in string:
     if i.lower() in 'aeiou':
         vowels+=1

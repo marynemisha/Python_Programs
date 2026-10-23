@@ -26,10 +26,12 @@ class BloodDonorManager:
             self.cursor.execute(query)
             records=self.cursor.fetchall()
             # print(records)
-            for data in records:
-                print(data)
+            # for data in records:
+            #     print(data)
+            return records
         except Exception as e:
-            print(e)
+            return []
+
     def retrieve(self,id=None):
         try:
             record = self.get_object(id=id)
@@ -83,13 +85,13 @@ donor_instance=BloodDonorManager()
 # donor_instance.post(name="Anju",blood_group="AB+",phone="9876543210",city="Ernakulam",last_donation=datetime.datetime.today())
 # donor_instance.post(name="Anjali",blood_group="A+",phone="9876543212",city="Ernakulam",last_donation=datetime.datetime.today())
 # donor_instance.post(name="Anu",blood_group="B+",phone="9876543260",city="TVM",last_donation=datetime.datetime.today())
-#donor_instance.post(name="Rahul",blood_group="o+",phone="9876543299",city="Kakkanad",last_donation=datetime.datetime.today())
+donor_instance.post(name="Rahul",blood_group="o+",phone="9876543299",city="Kakkanad",last_donation=datetime.datetime.today())
 # donor_instance.post(name="Ram",blood_group="o+",phone="9876540299",city="Kakkanad",last_donation=datetime.datetime.today())
 # donor_instance.get()
 # donor_instance.retrieve(id=1)
 # donor_instance.retrieve(id=10)
 # donor_instance.retrieve(id=4)
 # donor_instance.delete(id=10)
-donor_instance.delete(id=4)
+# donor_instance.delete(id=4)
 # print("...........After deleting a donor..........")
 # donor_instance.get()

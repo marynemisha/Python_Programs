@@ -25,16 +25,20 @@ class GymMemberManager(DbConnect):
         except Exception as e:
             return None
     def get(self):
-        self.connect=super().get_connection()
-        self.cursor=self.connect.cursor()
-        query="select * from member"
-        self.cursor.execute(query)
-        records=self.cursor.fetchall()
-        print(records)
+        try:
+            self.connect = super().get_connection()
+            self.cursor = self.connect.cursor()
+            query = "select * from member"
+            self.cursor.execute(query)
+            records = self.cursor.fetchall()
+            # print(records)
+            return records
+        except Exception as e:
+            return []
     def post(self,**kwargs):
         self.connect = super().get_connection()
         self.cursor = self.connect.cursor()
-        query="insert into member(name,place,plan,mobile,fee,joined_on)values(%s,%s,%s,%s,%s,%s)"
+        query="insert into member(name,place,mobile,plan,fee,joined_on)values(%s,%s,%s,%s,%s,%s)"
         values=[v for v in kwargs.values()]
         self.cursor.execute(query, values)
         self.connection.commit()
@@ -97,7 +101,7 @@ member_instance=GymMemberManager()
 # member_instance.get()
 # member_instance.retrieve(id=1)
 # member_instance.delete(id=3)
-member_instance.put(id=1,name="Anu",place="Ktym",mobile="9876500211",plan="6 months",fee=5000,joined_on=datetime.datetime.today())
+# member_instance.put(id=1,name="Anu",place="Ktym",mobile="9876500211",plan="6 months",fee=5000,joined_on=datetime.datetime.today())
 # member_instance.get()
 # member_instance.retrieve(id=1)
 # member_instance.delete(id=2)
